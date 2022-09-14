@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <div> Merhaba</div>
+
+    <div class="notHesap d-flex flex-column justify-content-center align-items-center">
+        <form class="row justify-content-center my-5">
+            <label class="mt-2">Vize notu</label>
+            <input class="vize mt-2" type="number" placeholder="Lütfen vize notunuzu giriniz">
+            <label class="mt-2">Final notu</label>
+            <input class="final mt-2" type="number" placeholder="Lütfen final notunuzu giriniz">
+            <input type="button" class="btn btn-primary w-50 mt-4" value="Hesapla" onclick="notHesapla() ">
+
+        </form>
+        <p class="result">Sonuç: </p>
+
+
+    </div>
+
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2>İlgi Alanları</h2>
+        <div class="col justify-content-center ">
+            <input class="btn btn bg-secondary mt-4" type="button" value="Getir" onclick="getInterest()">
+            <input class="btn btn bg-danger mt-4" type="button" value="Temizle" onclick="cleanInterest()">
+        </div>
+        <ul id="list">
+
+
+        </ul>
+
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
