@@ -95,7 +95,7 @@ function login2(username, password) {
   }
 }
 
-login2("musti", 123);
+login2("musti", "123");
 
 /*
 expanses her bir değerine 10 tl ekleyelim  ==for değilde stream
@@ -148,11 +148,10 @@ console.log(user.interests);
 
 
 */
-
+let result = document.querySelector(".result");
 function notHesapla() {
   let vize = document.querySelector(".vize");
   let final = document.querySelector(".final");
-  let result = document.querySelector(".result");
 
   let avg = vize.value * 0.4 + final.value * 0.6;
   let value;
@@ -166,18 +165,153 @@ function notHesapla() {
     value = "Kaldınız";
   }
 
-  //   result.textContent = ` Sonuc =====> ${value}`;
-  result.innerHTML = `<span class="text-danger" >Sonuc =====> ${value} </span>`;
+  result.textContent = ` Sonuc =====> ${changeColor(value)}`;
+  // result.innerHTML = `<span class="text-danger" >Sonuc =====> ${value} </span>`;
+}
+
+function changeColor(value) {
+  switch (value) {
+    case "Başarılı":
+      result.style.color = "green";
+      result.style.fontSize = "20px";
+      break;
+    case "Geçtiniz":
+      result.style.color = "blue";
+      result.style.fontSize = "20px";
+      break;
+    case "Ortalama ile Geçtiniz":
+      result.style.color = "orange";
+      result.style.fontSize = "20px";
+      break;
+
+    default:
+      result.style.color = "red";
+      result.style.backgroundColor = "yellow";
+      result.style.fontSize = "20px";
+      result.style.fontWeight = 800;
+      break;
+  }
+
+  return value;
 }
 
 function getInterest() {
   let list = document.querySelector("#list");
+  let btnGetir = document.querySelector("#btnGetir");
+  let btnTemizle = document.querySelector("#btnTemizle");
+  // console.log(btnGetir);
+  // btnGetir.className += ` disabled`;
+  // console.log(btnGetir);
+  // btnTemizle.className = "btn btn bg-danger mt-4";
+  btnGetir.classList.add("disabled");
+  btnTemizle.classList.remove("disabled");
   user.interests.forEach((x) => {
     list.innerHTML += `<li> ${x}</li> `;
   });
 }
 
 function cleanInterest() {
+  let btnGetir = document.querySelector("#btnGetir");
+  let btnTemizle = document.querySelector("#btnTemizle");
   let list = document.querySelector("#list");
   list.innerHTML = ``;
+
+  // btnTemizle.className += ` disabled`;
+  // console.log(btnGetir);
+  // btnGetir.className = "btn btn bg-secondary mt-4";
+  btnTemizle.classList.add("disabled");
+  btnGetir.classList.remove("disabled");
 }
+
+function getForPrice() {
+  let list = document.querySelector(".expansesList");
+
+  let price = document.querySelector("#price");
+
+  let array = user.expenses.filter((x) => x > price.value);
+  list.innerHTML = "";
+  console.log(array);
+
+  if (array.length > 0) {
+    array.forEach((z) => {
+      list.innerHTML += `   
+
+<li> ${z} </li>
+
+`;
+    });
+  } else {
+    list.textContent = "uygun sonuc bulunamadı";
+  }
+}
+
+let login3 = () => {
+  let username = document.querySelector("#username");
+
+  let password = document.querySelector("#password");
+  if (user.username === username.value && user.password === password.value) {
+    alert("giriş Başarılı");
+  } else {
+    alert("Kullanıcı adı Ve Şifre Hatalı");
+  }
+};
+
+function login4() {
+  let username = document.querySelector("#username");
+
+  let password = document.querySelector("#password");
+  if (user.username === username.value && user.password === password.value) {
+    alert("giriş Başarılı");
+  } else {
+    alert("Kullanıcı adı Ve Şifre Hatalı");
+  }
+}
+
+let form = document.querySelector("form");
+
+function login5() {
+  console.log("form Çıktıları");
+  console.log(form.userName.value);
+  console.log(form.password.value);
+  if (
+    user.username === form.userName.value &&
+    user.password === form.password.value
+  ) {
+    alert("giriş Başarılı");
+  } else {
+    alert("Kullanıcı adı Ve Şifre Hatalı");
+  }
+}
+
+let form2 = document.forms["form2"];
+
+function submitForm(e) {
+  console.log(e);
+
+  e.preventDefault();
+
+  if (
+    user.username === e.target.userName.value &&
+    user.password === e.target.password.value
+  ) {
+    alert("giriş Başarılı");
+  } else {
+    alert("Kullanıcı adı Ve Şifre Hatalı");
+  }
+}
+
+form2.addEventListener("submit", submitForm);
+
+let text = document.querySelector("#text");
+let resultText = document.querySelector(".resultText");
+
+// text.addEventListener("keyup", () => {
+//   let value = text.value;
+//   resultText.textContent = value;
+// });
+
+function keyDownText() {
+  let value = text.value;
+  resultText.textContent = value;
+}
+text.addEventListener("keydown", keyDownText);

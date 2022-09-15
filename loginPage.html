@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+
+        <form class="row justify-content-center my-5">
+            <label class="mt-2">Username</label>
+            <input class="mt-2" type="text" id=username name="userName" placeholder="Kullanıcı adı giriniz">
+            <label class="mt-2">Password</label>
+            <input class="mt-2" type="password" id=password name="password" placeholder="Şifre giriniz">
+            <input type="button" class="mt-2 btn btn-secondary" value="Giriş" onclick="login5()">
+        </form>
+
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+
+        <form name="form2" class="row justify-content-center my-5 ">
+            <label class="mt-2">Username</label>
+            <input class="mt-2" type="text" id=username name="userName" placeholder="Kullanıcı adı giriniz">
+            <label class="mt-2">Password</label>
+            <input class="mt-2" type="password" id=password name="password" placeholder="Şifre giriniz">
+            <input type="submit" class="mt-2 btn btn-secondary" value="Giriş">
+        </form>
+
+    </div>
+
+    <div class="d-flex flex-column justify-content-center align-items-center">
+
+        <div class="row justify-content-center my-5 ">
+            <label class=" mt-2">Text</label>
+            <input class="mt-2" type="text" id=text name="userName" placeholder="Lütfen Bir Değer Giriniz">
+
+        </div>
+
+        <p class="resultText"> </p>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

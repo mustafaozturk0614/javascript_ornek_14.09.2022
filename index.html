@@ -34,14 +34,27 @@
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h2>İlgi Alanları</h2>
         <div class="col justify-content-center ">
-            <input class="btn btn bg-secondary mt-4" type="button" value="Getir" onclick="getInterest()">
-            <input class="btn btn bg-danger mt-4" type="button" value="Temizle" onclick="cleanInterest()">
+            <input class="btn btn bg-secondary mt-4" id="btnGetir" type="button" value="Getir" onclick="getInterest()">
+            <input class="btn btn bg-danger mt-4 disabled" id="btnTemizle" type="button" value="Temizle"
+                onclick="cleanInterest()">
         </div>
         <ul id="list">
 
 
         </ul>
 
+    </div>
+
+
+    <h2 class="text-center"> Harcamalara Göre filtreleme </h2>
+    <div class="d-flex flex-column">
+        <div class="d-flex justify-content-center">
+            <input type="number" id="price" placeholder="Lütfen bir fiyat giriniz">
+        </div>
+        <button class="btn btn-secondary w-50 " onclick="getForPrice()">Harcamaları Getir </button>
+        <ul class="expansesList">
+
+        </ul>
     </div>
 
 
